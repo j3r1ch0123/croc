@@ -19,6 +19,7 @@ while True:
             f.write(l)
             l = sc.recv(1024)
         f.close()
+        print("Files received...")
 
     sc.close()
 
