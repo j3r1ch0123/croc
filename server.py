@@ -4,6 +4,7 @@ import sys
 
 s = socket.socket()
 s.bind(("127.0.0.1",9000)) #Change these
+print("Listening...")
 s.listen(10)
 i=1
 
