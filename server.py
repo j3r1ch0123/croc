@@ -18,7 +18,6 @@ while True:
             f.write(l)
             l = sc.recv(1024)
         f.close()
-        sc.send("received") # Would like to send back a response
 
     sc.close()
 
